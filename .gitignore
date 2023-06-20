@@ -2,5 +2,9 @@
 .vs/
 */__pycache__/
 
+# Only Book
+Appendix_dainihan/
+Python_Django_sample_dainihan/
+
 # File
 
