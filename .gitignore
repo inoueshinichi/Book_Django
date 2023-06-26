@@ -1,6 +1,6 @@
 # Directory
 .vs/
-*/__pycache__/
+__pycache__/
 
 # Only Book
 Appendix_dainihan/

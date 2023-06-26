@@ -4,6 +4,12 @@ DjangoによるWebサーバー開発の基本
 ### 動かして学ぶ！Python Django開発入門
 https://www.shoeisha.co.jp/book/detail/9784798174198  
 
+### Version
++ Python 3.9.16
++ Django 3.2.19
++ psycopg-binary 2.9.6
++ PostgreSQL 10.22
+
 #### 目次
 Chapter 1　Webアプリを開発する前に  
 　01　設計作業は簡素にする  
