@@ -171,3 +171,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         },
 #     }
 # }
+
+
+# 静的ファイルの保存場所を示す
+STATICFILES_DIR = (
+    os.path.join(BASE_DIR, 'static'),
+)
