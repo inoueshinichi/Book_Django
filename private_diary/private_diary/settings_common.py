@@ -16,6 +16,8 @@ import os
 
 from django.contrib.messages import constants as messages
 
+from Python_Django_sample_dainihan.Chapter10.private_diary.private_diary.settings_common import ACCOUNT_AUTHENTICATION_METHOD
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,19 +29,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b=nrkp4jo#mv*ba*$46yo!79y4xa0aodp)=sjpwzh4ij&yk=@*'
 
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    # 'django.contrib.admin', # accountsアプリでカスタムユーザー(CustomUser)を定義したためコメントアウト
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'diary.apps.DiaryConfig',  # 追加
+    # アプリケーションに関する設定を追加
+    'diary.apps.DiaryConfig',
+    'accounts.apps.AccountsConfig',
+
+    # django-allauthモジュールに関する設定を追加
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+
 ]
 
 MIDDLEWARE = [
@@ -106,6 +114,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# CustomUser for Authenticationに関する設定を追加
+AUTH_USER_MODEL = "accounts.CustomUser"
+
+# django-allauthモジュールに関する設定を追加
+SITE_ID = 1 # django.contrib.sitesを使うためにサイト識別子を設定
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend', # メールアドレス認証(一般ユーザー用)
+    'django.contrib.auth.backends.ModelBackend', # ユーザー名認証(管理サイト用)
+)
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # SingUpにメールアドレス確認を挟む
+ACCOUNT_EMAIL_REQUIRED = True
+LOGIN_REDIRECT_URL = 'diary:index'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+ACCOUNT_LOGOUT_ON_GET = True # LogOutリンクのクリック一発でログアウトする設定
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -133,8 +158,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-print('BaseDIR:', BASE_DIR)
-print('static', os.path.join(BASE_DIR, 'static'))
+# print('BaseDIR:', BASE_DIR)
+# print('static', os.path.join(BASE_DIR, 'static'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
