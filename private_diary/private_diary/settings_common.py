@@ -16,8 +16,6 @@ import os
 
 from django.contrib.messages import constants as messages
 
-from Python_Django_sample_dainihan.Chapter10.private_diary.private_diary.settings_common import ACCOUNT_AUTHENTICATION_METHOD
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

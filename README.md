@@ -9,7 +9,7 @@ https://www.shoeisha.co.jp/book/detail/9784798174198
 + Django 3.2.19
 + psycopg-binary 2.9.6
 + PostgreSQL 10.22
-+ django-allauth 3.2.19
++ django-allauth 0.54.0
 
 ### 補足
 + CustomUser作成時の2点の変更箇所 https://note.com/mihami383/n/nb58eec166df6
