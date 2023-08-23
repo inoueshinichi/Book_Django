@@ -11,6 +11,9 @@ https://www.shoeisha.co.jp/book/detail/9784798174198
 + PostgreSQL 10.22
 + django-allauth 0.54.0
 
+### django-allauth
++ https://github.com/pennersr/django-allauth/tree/main/allauth
+
 ### 補足
 + CustomUser作成時の2点の変更箇所 https://note.com/mihami383/n/nb58eec166df6
 
