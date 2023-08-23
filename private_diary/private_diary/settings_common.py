@@ -172,3 +172,6 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }
+
+# メディアファイルのURL
+MEDIA_URL = '/media/'

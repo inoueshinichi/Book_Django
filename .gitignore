@@ -1,4 +1,4 @@
-# Directory
+# Environment
 .vscode/
 __pycache__/
 
@@ -6,5 +6,8 @@ __pycache__/
 Appendix_dainihan/
 Python_Django_sample_dainihan/
 
-# File
+### Django ###
+
+# private_diary
+private_diary/media/
 
