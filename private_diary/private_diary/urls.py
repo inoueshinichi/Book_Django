@@ -25,7 +25,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 ]
 
-from django.contrib.staticfiles.urls import static
+# from django.contrib.staticfiles.urls import static
+from django.conf.urls.static import static # static関数はこっちを使う.
 from . import settings_common, settings_dev
 
 # 開発サーバーでメディアファイルを配信できるように設定
