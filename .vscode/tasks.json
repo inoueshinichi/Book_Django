@@ -3,15 +3,29 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
+        // {
+        //     "label": "CHECK anaconda virtual environments",
+        //     "type": "process",
+        //     "command": "conda",
+        //     "args": [
+        //         "info",
+        //         "-e"
+        //     ]
+        // },
         {
-            "label": "check anaconda virtual environments",
+            "label": "SHOW postgreSQL db",
             "type": "shell",
-            "command": "conda",
-            "args": [
-                "info",
-                "-e"
-            ]
+            "command": "psql -l",
         },
+        {
+            "label": "ENTER private_diary table on postgreSQL db",
+            "type":"shell",
+            "command": "psql -d private_diary",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "SHOW postgreSQL db"
+            ],
+        }
         {
             "label": "MAKE migration for private_diary db",
             "type": "process",
