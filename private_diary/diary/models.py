@@ -4,44 +4,46 @@ from django.db import models
 from accounts.models import CustomUser
 from django.db import models
 
-"""
-    Diaryテーブル      0...* ------------------ 1    CustomUserテーブル
-    | id (主キー) |                                  | id (主キー) |
-    | title |                                       | password |
-    | content |                                     | last_login |
-    | photo1 |                                      | is_superuser |
-    | photo2 |                                      | username |
-    | photo3 |                                      | first_name |
-    | created_at |                                  | last_name |
-    | updated_at |                                  | email |
-                                                    | is_staff |
-                                                    | is_active |
-                                                    | date_joined |
-"""
 
 class Diary(models.Model):
     """日記モデル"""
-    # Diaryテーブル
-    # id (主キー)
-    # user_id (外部キー)
-    # title
-    # photo1
-    # photo2
-    # photo3
-    # created_at
-    # updated_at
+    """
+        Diaryテーブル      0...* ------------------ 1    CustomUserテーブル
+        | id (主キー) |                                  | id (主キー) |
+        | title |                                       | password |
+        | content |                                     | last_login |
+        | photo1 |                                      | is_superuser |
+        | photo2 |                                      | username |
+        | photo3 |                                      | first_name |
+        | created_at |                                  | last_name |
+        | updated_at |                                  | email |
+                                                        | is_staff |
+                                                        | is_active |
+                                                        | date_joined |
+    """
 
-    user_id = models.ForeignKey(CustomUser, 
-                                verbose_name="ユーザー", 
-                                on_delete=models.PROTECT)
-    title = models.CharField(verbose_name="タイトル", max_length=40)
-    content = models.TextField(verbose_name="本文", blank=True, null=True)
-    photo1 = models.ImageField(verbose_name="写真1", blank=True, null=True)
-    photo2 = models.ImageField(verbose_name="写真2", blank=True, null=True)
-    photo3 = models.ImageField(verbose_name="写真3", blank=True, null=True)
-    created_at = models.DateTimeField(verbose_name="作成日時", auto_now_add=True)
-    update_at = models.DateTimeField(verbose_name="更新日時", auto_now=True)
-
+    user = models.ForeignKey(CustomUser, 
+                             verbose_name="ユーザー", 
+                             on_delete=models.PROTECT)
+    title = models.CharField(verbose_name="タイトル", 
+                             max_length=40)
+    content = models.TextField(verbose_name="本文", 
+                               blank=True, 
+                               null=True)
+    photo1 = models.ImageField(verbose_name="写真1", 
+                               blank=True, 
+                               null=True)
+    photo2 = models.ImageField(verbose_name="写真2", 
+                               blank=True, 
+                               null=True)
+    photo3 = models.ImageField(verbose_name="写真3", 
+                               blank=True, 
+                               null=True)
+    created_at = models.DateTimeField(verbose_name="作成日時", 
+                                      auto_now_add=True)
+    update_at = models.DateTimeField(verbose_name="更新日時", 
+                                     auto_now=True)
+    
     class Meta:
         verbose_name_plural = 'Diary'
 

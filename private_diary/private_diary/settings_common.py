@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-b=nrkp4jo#mv*ba*$46yo!79y4xa0aodp)=sjpwzh4ij&yk=@*
 # Application definition
 
 INSTALLED_APPS = [
-    # 'django.contrib.admin', # accountsアプリでカスタムユーザー(CustomUser)を定義したためコメントアウト
+    'django.contrib.admin', # accountsアプリでカスタムユーザー(CustomUser)を定義したためコメントアウト
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -175,3 +175,6 @@ MESSAGE_TAGS = {
 
 # メディアファイルのURL
 MEDIA_URL = '/media/'
+
+# ログイン直後に日記一覧ページに遷移するようにリダイレクトページを設定する
+LOGIN_REDIRECT_URL = 'diary:diary_list'

@@ -20,7 +20,7 @@ from django.urls import (
 )
 
 urlpatterns = [
-    # path('admin/', admin.site.urls), # accountsアプリでカスタムユーザー(CustomUser)を定義したためコメントアウト
+    path('admin/', admin.site.urls), # accountsアプリでカスタムユーザー(CustomUser)を定義したためコメントアウト
     path('', include('diary.urls')),
     path('accounts/', include('allauth.urls')),
 ]

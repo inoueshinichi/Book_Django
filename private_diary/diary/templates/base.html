@@ -1,3 +1,5 @@
+<!-- 画面の雛形 -->
+
 {% load static %}
 
 <html lang="ja">
@@ -31,7 +33,7 @@
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'startbootstrap_gallery/startbootstrap-one-page-wonder-gh-pages/css/styles.css' %}" rel="stylesheet">
     <!-- <link href="{% static 'css/one-page-wonder.css' %}" ref="stylesheet"> -->
 
     <!-- My style -->
@@ -58,6 +60,11 @@
                             <a class="nav-link {% block active_inquiry %}{% endblock %}"
                                 href="{% url 'diary:inquiry' %}">INQUIRY</a>
                         </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item {% block active_diary_list %}{% endblock %}">
+                            <a class="nav-link" href="{% url 'diary:diary_list' %}">DIARY LIST</a>
+                        </li>
+                        {% endif %}
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         {% if user.is_authenticated %}
