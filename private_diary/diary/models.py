@@ -44,6 +44,7 @@ class Diary(models.Model):
     update_at = models.DateTimeField(verbose_name="更新日時", 
                                      auto_now=True)
     
+    # DB table
     class Meta:
         verbose_name_plural = 'Diary'
 
