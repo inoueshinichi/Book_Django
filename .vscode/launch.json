@@ -27,8 +27,24 @@
             "justMyCode": true,
             "args": [
                 "test",
-                // "accounts",
+                "accounts",
                 "diary",
+            ],
+            "env": {
+                "DB_USER": "",
+                "DB_PASSWORD": "",
+                "DJANGO_SETTINGS_MODULE": "private_diary.settings_dev"
+            }
+        },
+        {
+            "name": "Django App: backup db for diary",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/private_diary/manage.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "backup_diary"
             ],
             "env": {
                 "DB_USER": "",

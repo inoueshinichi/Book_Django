@@ -41,7 +41,7 @@ class Diary(models.Model):
                                null=True)
     created_at = models.DateTimeField(verbose_name="作成日時", 
                                       auto_now_add=True)
-    update_at = models.DateTimeField(verbose_name="更新日時", 
+    updated_at = models.DateTimeField(verbose_name="更新日時", 
                                      auto_now=True)
     
     # DB table

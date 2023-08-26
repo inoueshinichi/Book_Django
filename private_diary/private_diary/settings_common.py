@@ -178,3 +178,8 @@ MEDIA_URL = '/media/'
 
 # ログイン直後に日記一覧ページに遷移するようにリダイレクトページを設定する
 LOGIN_REDIRECT_URL = 'diary:diary_list'
+
+# バックアップ用バッチ処理
+BACKUP_PATH = "backup/"
+NUM_SAVED_BACKUP = 30
+
