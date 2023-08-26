@@ -134,4 +134,20 @@ class DiaryUpdateView(LoginRequiredMixin, generic.UpdateView):
         messages.error(self.request, '日記の更新に失敗しました')
         return super().form_invalid(form)
     
+
+# 日記削除画面
+class DiaryDeleteView(LoginRequiredMixin, generic.DeleteView):
+    # O/Rマッピング
+    model = Diary
+
+    # テンプレートHTML
+    template_name = 'diary_delete.html'
+
+    # 遷移先画面
+    success_url = reverse_lazy('diary:diary_list')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "日記を削除しました")
+        return super().delete(request, *args, **kwargs)
+    
     

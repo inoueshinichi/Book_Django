@@ -17,6 +17,24 @@
                 "DB_PASSWORD": "",
                 "DJANGO_SETTINGS_MODULE": "private_diary.settings_dev"
             }
+        },
+        {
+            "name": "Django App: test",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/private_diary/manage.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "test",
+                // "accounts",
+                "diary",
+            ],
+            "env": {
+                "DB_USER": "",
+                "DB_PASSWORD": "",
+                "DJANGO_SETTINGS_MODULE": "private_diary.settings_dev"
+            }
         }
     ]
 }
