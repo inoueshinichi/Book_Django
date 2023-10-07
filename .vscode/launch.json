@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}/private_diary/manage.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["runserver"],
+            "args": ["runserver", "8090"],
             "env": {
                 "DB_USER": "",
                 "DB_PASSWORD": "",

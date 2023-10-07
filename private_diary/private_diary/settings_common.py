@@ -45,9 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-
-    # aws ec2 ses
-    'django_ses',
 ]
 
 MIDDLEWARE = [

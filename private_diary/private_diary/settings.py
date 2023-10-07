@@ -17,6 +17,8 @@ AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
 EMAIL_BACKEND = 'django_ses.SESBackend'
 
+INSTALLED_APPS.append('django_ses') # aws ec2 ses
+
 # ロギング
 LOGGING = {
     'version': 1,
