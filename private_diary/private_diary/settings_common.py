@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
 
-    # django_ses
+    # aws ec2 ses
     'django_ses',
 ]
 
